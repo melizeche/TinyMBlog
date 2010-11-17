@@ -1,0 +1,168 @@
+/* 
+Blue blog template 
+----------------------
+You are free to use
+this template in any
+way you desire, no
+author information or
+link back are required.
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #337FC6 url("bg.gif") top center repeat-y;
+	font: normal 8pt/13pt verdana, arial,sans-serif;
+	color: #808080;
+	
+}
+
+a, a:visited {
+	text-decoration: underline;
+	color: #000;
+	
+}
+
+a:hover {
+	color: #808080;
+}
+
+#header {
+	width: 562px;
+	height: 60px;
+	background: #000 url("header.gif") no-repeat;
+	padding-top: 30px;
+	padding-left: 18px;
+	font-size: 14pt;
+	color: #FFF;
+}
+
+#header h2{
+	padding-top: 5px;
+	font-size: 9pt;
+	color: #C2D9EF;	
+}
+
+#container {
+	width: 580px;
+	background: #fff url("sidebar.gif") repeat-y right;
+	border: solid 10px #fff;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#horizontal {
+	width: 560px;
+	height: 30px;
+	background: url(horizontal.gif);
+	font-weight: bold;
+	font-size: 8pt;
+	padding-top: 6px;
+	padding-left: 20px;
+	
+}
+
+#horizontal a, #horizontal a:visited {
+	color: #C2D9EF;
+	text-decoration: none;
+	margin-right: 15px;
+}
+
+#horizontal a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#right-column {
+	color: #808080;
+	width: 134px;
+	
+	background: url(menutop.gif) no-repeat top left;
+	float: right;
+	padding: 10px;
+	border-right: 4px solid #FFF;
+}
+
+#content {
+	float: left;
+	width: 410px;
+	margin: 10px 0 0 4px;
+}
+
+#content h2{
+	font-size: 12pt;
+	font-weight: bold;
+	color: #76A7DC;
+	margin-bottom: 5px;
+	padding-left: 14px;
+	background: url(h2bg.gif) top left repeat-y;
+}
+
+.black {
+	color: #000;
+}
+
+p {
+margin-bottom: 20px;
+padding-left: 14px;
+background: url(articlebg.gif) top left repeat-y;
+}
+.form {
+margin-bottom: 0px;
+padding-left: 0px;
+background: none;
+font-weight: bold;
+}
+
+input.text {
+	width: 70px;	
+	border: 1px solid #ccc;
+}
+
+input.button {
+	color: #808080;
+	padding-left: 0px;
+	font-size: 8pt;	
+	border: none;
+	background: none;
+	}
+
+#searchbox {
+	background: url(searchbox.gif) no-repeat;
+	padding: 5px;
+	height: 30px;
+}
+
+#footer {
+	color: #ccc;
+	text-align:left;
+	background: #F9F9F9;
+	clear: both;
+	width: 402px;
+	margin-left: 4px;
+	height: 33px;
+	padding: 4px;
+	border: 1px solid #E4E4E4;
+}
+#footer2 {
+	color: #ccc;
+	text-align:right;
+	background: #F9F9F9;
+	clear: both;
+	width: 402px;
+	margin-left: 4px;
+	height: 33px;
+	padding: 4px;
+	border: 1px solid #E4E4E4;
+}
+
+#footer a, #footer a:visited{
+	color: #ccc;
+}
+
+#footer a:hover {
+	color: #808080;
+}
