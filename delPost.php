@@ -13,7 +13,8 @@
 				<?php
 					$posts=listarPosts(); 
 					foreach ($posts as $post) {
-						echo '\n<option value="' . $post["_id"] . '" label="'.$post["titulo"] . '" ></option>';
+						//echo '<option value="' . $post["_id"] . '" label="'.$post["titulo"] . '" ></option>';
+						echo '<option value="' . $post["_id"] . '" label="'.$post["titulo"] . '" >' .  $post["titulo"] . '</option>';
 					}
 				?>
 			</select>
