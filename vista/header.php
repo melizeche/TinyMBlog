@@ -10,13 +10,14 @@
 	
 <div id="container">
 		<div id="header">
-			<h1><a href="<?php echo getUrl().'">'. getTitle() ?> </a></h1>
+			<h1><a id="titulo" href="<?php echo getUrl().'">'. getTitle() ?> </a></h1>
 		</div>
 		<div id="horizontal">
 			<a href="index.php">Home</a>' 
 			<a href="#">Login</a>
 			<a href="newPost.php">Agregar un Post!</a>
 			<a href="delPost.php">Eliminar un Post!</a>
+			<a href="editBlog.php">Editar Informacion del Blog!</a>
 		</div>
 		<div id="right-column">
 		

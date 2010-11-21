@@ -22,7 +22,7 @@ body {
 
 a, a:visited {
 	text-decoration: underline;
-	color: #000;
+	color: #76A7DC;
 	
 }
 
@@ -36,8 +36,16 @@ a:hover {
 	background: #000 url("header.gif") no-repeat;
 	padding-top: 30px;
 	padding-left: 18px;
-	font-size: 14pt;
+	font-size: 13pt;
 	color: #FFF;
+}
+
+#header a, #header a:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+#header a:hover {
+	color: #808080;
 }
 
 #header h2{
@@ -99,6 +107,10 @@ a:hover {
 	margin-bottom: 5px;
 	padding-left: 14px;
 	background: url(h2bg.gif) top left repeat-y;
+	
+}
+#content a{
+	text-decoration:none;
 }
 
 .black {
@@ -162,6 +174,7 @@ input.button {
 #footer a, #footer a:visited{
 	color: #ccc;
 }
+
 
 #footer a:hover {
 	color: #808080;

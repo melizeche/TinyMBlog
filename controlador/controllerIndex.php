@@ -8,6 +8,12 @@
 		
 	}
 	
+	function linkPost($id){
+		$cursor = mIndex::getInstance()->getSinglePost($id);
+		return $cursor;
+		
+	}
+	
 	function getTitle(){
 		$cursor = mIndex::getInstance()->getInfo();
 		
