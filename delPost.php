@@ -1,10 +1,10 @@
 <?php
-	include("vista/header.php");
-	require("modelo/modelDel.php");
+	include("views/header.php");
+	require("models/modelPost.php");
 	
 	if (array_key_exists('_submit_check',$_POST) ) {
-		 echo "Se Elimino el Post!!!";
-		  delp::getInstance()->delPost($_POST['SelPost']);
+		Post::getInstance()->deletePost($_POST['SelPost']);
+		echo "Post deleted!";
 
 	} else { ?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
@@ -22,5 +22,5 @@
 			<input type="submit" name="submitted" value="Eliminar Post!" /></p>
 		</form>
 	<?php } 
-	include("vista/footer.php");
+	include("views/footer.php");
 	?>

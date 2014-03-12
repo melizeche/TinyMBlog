@@ -1,10 +1,10 @@
 <?php
-	include("vista/header.php");
-	require("modelo/modelNew.php");
+	include("views/header.php");
+	require("models/modelPost.php");
 	
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['titulo'])) { 
 		
-		newp::getInstance()->newPost($_POST['titulo'],$_POST['texto'],'admin');
+		Post::getInstance()->newPost($_POST['titulo'],$_POST['texto'],'admin');
 		echo "Se agrego tu post!!";
 		
 	} else { ?>
@@ -19,5 +19,5 @@
 		</form>
 	
 	<?php } 
-	include("vista/footer.php");
+	include("views/footer.php");
 ?>

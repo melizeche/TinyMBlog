@@ -1,6 +1,6 @@
 <?php
-	include("vista/header.php");
-	//require("modelo/modelIndex.php");
+	include("views/header.php");
+	//require("models/modelIndex.php");
 	
 	if (array_key_exists('id',$_GET) && !empty($_GET['id'])) {
 		$id=$_GET['id'];
@@ -17,5 +17,5 @@
 	
 	
 	<?php } 
-	include("vista/footer.php");
+	include("views/footer.php");
 ?>

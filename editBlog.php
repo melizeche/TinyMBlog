@@ -1,15 +1,15 @@
 <?php
 	
-	include("controlador/controllerInfo.php");
+	include("controllers/controllerInfo.php");
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['titulo'])) { 
 		
 		//newp::getInstance()->newPost($_POST['titulo'],$_POST['texto'],'admin');
 		setInfo($_POST['titulo'],$_POST['url']);
-		include("vista/header.php");
+		include("views/header.php");
 		echo "Se Modifico el Blog!!";
 		
 	}else{
-		include("vista/header.php");
+		include("views/header.php");
 	}
 	
 	?>
@@ -24,6 +24,6 @@
 
 	<?php
 
-	include("vista/footer.php");
+	include("views/footer.php");
 ?>
 
