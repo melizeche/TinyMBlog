@@ -24,12 +24,12 @@
 				<?php session_start(); if(isAuth($_SESSION['user_id'])) { ?>
 				<li><a href="#">Posts</a>
 					<ul>
-						<li><a href="newPost.php">Agregar un Post!</a></li>
-						<li><a href="delPost.php">Eliminar un Post!</a></li>
-						<li><a href="editBlog.php">Editar Informacion del Blog!</a></li>
+						<li><a href="newPost.php">New post!</a></li>
+						<li><a href="delPost.php">Delete post!</a></li>
+						<li><a href="editBlog.php">Edit Blog info!</a></li>
 					</ul>
 				</li>
-				<li><a href="login.php">Logout</a><li>
+				<li><a href="logout.php">Logout</a><li>
 				<?php }else{	?>
 				<li><a href="login.php">Login</a><li>
 				<?php } ?>
@@ -38,8 +38,8 @@
 	
 		<div id="right-column">
 		
-			TinyMBlog es un CMS para hacer un blog simple y liviano.<br/>
-			Ultimos Comentarios
+			TinyMBlog is a ultra light blogging CMS platform .<br/>
+			Last comments
 			<br/><br/>
 			Important links:
 			<br/>

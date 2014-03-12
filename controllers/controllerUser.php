@@ -19,6 +19,15 @@
 			return $cursor;
 	}
 
+	function getUser($id){
+			
+			$collec = mIndex::connect("users");
+			$query =  array('_id' => $id);
+			$cursor = $collec->findOne($query);
+			
+			return $cursor;	
+	}
+
 	function isAuth($id){
 		
 		$ses = checkSession($id)->getNext();
