@@ -5,9 +5,11 @@
 			if (!$mInfo) $mInfo = new mInfo; 
 			return $mInfo;
 		}
+
 	
 		function connect($collection){
 			global $mon;
+
 			$mon = new Mongo();
 			$db = $mon->selectDB("blog");
 			$col = $db->$collection;
@@ -21,10 +23,10 @@
 			return $cursor;
 			
 		}
-		function modInfo($titu,$url){
+		function modInfo($titu,$url,$description){
 			$collec = mInfo::getInstance()->connect("info");
 			$a = array('_id' => '1');
-			$newdata = array('$set' => array("titulo" => $titu , "url" => $url));
+			$newdata = array('$set' => array("titulo" => $titu , "url" => $url, "description" => $description));
 			$collec->update($a,$newdata);
 		}
 	}

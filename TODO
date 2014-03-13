@@ -5,4 +5,5 @@ TODO
 # Setup script for new installs
 # Setup file for the database connection
 # Organize files
-# move some models to controllers
+# move some models funtions to controllers
+# all the pages to the new template system

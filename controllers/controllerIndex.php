@@ -21,6 +21,13 @@
 					return $obj['titulo'];
 		}
 	}
+	function getDescription(){
+		$cursor = mIndex::getInstance()->getInfo();
+		
+		foreach ($cursor as $obj) {
+					return $obj['description'];
+		}
+	}
 	function getUrl(){
 		$cursor = mIndex::getInstance()->getInfo();
 		foreach ($cursor as $obj) {

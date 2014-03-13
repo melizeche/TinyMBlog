@@ -8,15 +8,21 @@
 		
 	}
 	
-	function getDir(){
+	function getBlogUrl(){
 		$cursor = mInfo::getInstance()->getInfo();
 		$titulo = $cursor->getNext();
 		return $titulo['url'];
 		
 	}
-	function setInfo($titulo,$url){
+	function getBlogDescription(){
+		$cursor = mInfo::getInstance()->getInfo();
+		$titulo = $cursor->getNext();
+		return $titulo['description'];
 		
-		 mInfo::getInstance()->modInfo($titulo,$url);
+	}
+	function setInfo($titulo,$url,$description){
+		
+		 mInfo::getInstance()->modInfo($titulo,$url,$description);
 		
 	}
 ?>

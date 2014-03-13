@@ -1,26 +1,16 @@
 <?php
-	include("views/header.php");
-	require("models/modelPost.php");
-	
-	if (array_key_exists('_submit_check',$_POST) ) {
-		Post::getInstance()->deletePost($_POST['SelPost']);
-		echo "Post deleted!";
+require_once("controllers/controllerIndex.php");
+require_once("controllers/controllerUser.php");
+require("models/modelPost.php");
 
-	} else { ?>
-		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-		
-			<p><select name="SelPost" size="1">
-				<?php
-					$posts=listarPosts(); 
-					foreach ($posts as $post) {
-						//echo '<option value="' . $post["_id"] . '" label="'.$post["titulo"] . '" ></option>';
-						echo '<option value="' . $post["_id"] . '" label="'.$post["titulo"] . '" >' .  $post["titulo"] . '</option>';
-					}
-				?>
-			</select>
-			<input type="hidden" name="_submit_check" value="1"/> 
-			<input type="submit" name="submitted" value="Eliminar Post!" /></p>
-		</form>
-	<?php } 
-	include("views/footer.php");
-	?>
+require 'templateEngine.php';
+ 
+$view = new Template("views/pure.php");
+$content = new Template("views/delPost.php");
+
+$view->title = getTitle();
+$view->description = getDescription();
+
+$view->content = $content;
+ 
+echo $view;
