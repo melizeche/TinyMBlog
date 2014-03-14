@@ -9,9 +9,12 @@
 		$password=filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 		$email=filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 		$name=filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-
-		User::getInstance()->newUser($user,$password,$email,$name);
-		echo "Se agrego el usuario!!";
+		try{
+			User::getInstance()->newUser($user,$password,$email,$name);
+			echo "Se agrego el usuario!!";
+		}catch(Exception $e){
+			echo "Ya existe el usuario " . $user;
+		}
 		
 	} else { ?>
 		

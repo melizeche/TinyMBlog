@@ -27,17 +27,17 @@
 	}
 
 	function isAuth($id){
-		
-		$ses = checkSession($id)->getNext();
+		if (empty($_SESSION['user_id'])) {
+			return false;
+		}
+
+ 		$ses = checkSession($_SESSION['user_id'])->getNext();
         $user = $ses['user'];
-        if($user == false)
-        {
+        if(empty($user)) {
             return false;
         }
-        else
-        {
-            return true;
-        }
+        
+        return true;
 	}
 	
 	

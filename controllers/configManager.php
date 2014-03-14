@@ -14,6 +14,9 @@ class ConfigManager {
         }
         $cfg['connection'] = $connstr;
         ConfigManager::set($cfg);
+
+        mIndex::connect('users')->ensureIndex(['user' => 1], ['unique' => true, 'background' => true]);
+
     	return $cfg;
 	}
  

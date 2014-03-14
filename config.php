@@ -1,8 +1,8 @@
 <?php
 return array (
-  'host' => 'oceanic.mongohq.com',
-  'port' => '10054',
-  'database' => 'tinyblog',
-  'user' => 'marce',
-  'password' => '12345',
+  'host' => 'localhost',
+  'port' => '27017',
+  'database' => 'blog',
+  'user' => '',
+  'password' => '',
 );
