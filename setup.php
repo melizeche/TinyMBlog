@@ -77,14 +77,14 @@
                     $cfg =  loadConfig();
                     
                     ?>
-                    <form method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                    <form class="pure-form" method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <p class="form">Username:</p>
                     <p><input type="text" name="user" value="admin"/></p>
                     <p class="form">Passwor:</p>
                     <p><input type="text" name="password" value="admin"/></p> 
                     <p><input type="hidden" name="step" value="4"/> </p>
                     <p><input type="hidden" name="host" value="<?php echo $cfg['host']; ?>"/> </p>
-                    <p><input type="submit" name="submitted" value="Create user" /></p>
+                    <p><input class="pure-button" type="submit" name="submitted" value="Create user" /></p>
                     
                     <?php
                   }elseif($_GET['step']=='4'){
@@ -104,7 +104,7 @@
                       $a = array('_id' => '0','user' => $user, 'password' =>md5($password), 'email'=>'', 'name'=>'Admin');
                       $col->insert($a);
                       $col = $db->posts;
-                      $a = array('titulo' => "Hello World!", 'autor' => "0", 'fecha'=>'1289924462');
+                      $a = array('_id' => '1', 'titulo' => "Hello World!", 'text'=>"Your first post!" ,'autor' => "0", 'fecha'=>time());
                       $col->insert($a);
                       $col = $db->info;
                       $a = array('titulo' => "Just A TinyMBlog", 'description' => "A ultra light blogging CMS", 'url'=>'#');
@@ -127,7 +127,7 @@
               } 
             ?>
                 <p>These settings should be ok</p>
-                <form method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                <form class="pure-form" method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                 <p class="form">MongoDB Server:</p>
                 <p><input type="text" name="host" value="localhost"/></p>
                 <p class="form">Port:</p>
@@ -140,7 +140,7 @@
                 <p><input type="text" name="dbpassword" value=""/></p>
                 <p><input type="hidden" name="step" value="1"/> </p>
 
-                <p><input type="submit" name="submitted" value="Save Config" /></p>
+                <p><input class="pure-button" type="submit" name="submitted" value="Save Config" /></p>
                 </form>
             <?php } ?>
           </div>

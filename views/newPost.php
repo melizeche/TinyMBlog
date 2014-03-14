@@ -11,13 +11,13 @@
 		
 	} else { ?>
 		
-		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+		<form class="pure-form" class="pure-form" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 			<p class="form">Title:</p>
 			<p><input type="text" name="titulo" value="<?php if (isset($titulo)) { echo $titulo; } ?>" /></p>
 			<p class="form">Text:</p>
 			<p><textarea name="texto" rows="20" cols="40"><?php if (isset($texto)) { echo $texto; } ?></textarea></p>
 			<p><input type="hidden" name="_submit_check" value="1"/> </p>
-			<p><input type="submit" name="submitted" value="Add Post" /></p>
+			<p><input class="pure-button" type="submit" name="submitted" value="Add Post" /></p>
 		</form>
 	
 	<?php } 

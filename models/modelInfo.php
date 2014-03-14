@@ -9,17 +9,16 @@
 	
 		function connect($collection){
 			global $mon;
-
-			$mon = new Mongo();
-			$db = $mon->selectDB("blog");
+			$mon = new MongoClient(ConfigManager::get('connection'));
+			$db = $mon->selectDB(ConfigManager::get('database'));
 			$col = $db->$collection;
 			return $col;
 		}
 		function getInfo(){ //Recuperamos los Posts
 			global $mon;
 			$collec = mIndex::connect("info");
-			$cursor = $collec->find()->limit(1);
-			$mon->close();
+			$a = array('_id' => '1');
+			$cursor = $collec->findOne($a);
 			return $cursor;
 			
 		}

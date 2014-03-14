@@ -2,15 +2,15 @@
 <?php 
   require_once("../controllers/controllerIndex.php");
   require_once("../controllers/controllerUser.php");
+  
 ?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $this->title; ?></title>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+  <link rel="stylesheet" href="css/pure-min.css">
   <link rel="stylesheet" href="css/FontAwesome/font-awesome.min.css">
-  <link rel="stylesheet" href="css/syntax.css">
   <link rel="stylesheet" href="css/blog.css">
 </head>
   <body>
@@ -27,27 +27,29 @@
         
         
         
-        <?php session_start(); if(isAuth($_SESSION['user_id'])) { ?>
-        <li><a href="#">Posts</a>
-          <ul>
-            <li><a href="newPost.php">New post!</a></li>
-            <li><a href="delPost.php">Delete post!</a></li>
-            <li><a href="editBlog.php">Edit Blog info!</a></li>
-          </ul>
-        </li>
-        <li><a href="logout.php">Logout</a><li>
-        <?php }else{  ?>
+        <?php session_start(); 
+              if(isset($_SESSION['user_id'])){
+                if(isAuth($_SESSION['user_id'])) { 
+        ?>
+                <li><a href="#">Posts</a>
+                  <ul>
+                    <li><a href="newPost.php">New post!</a></li>
+                    <li><a href="delPost.php">Delete post!</a></li>
+                    <li><a href="editBlog.php">Edit Blog info!</a></li>
+                  </ul>
+                </li>
+                <li><a href="logout.php">Logout</a><li>
+        <?php 
+                }}else{  ?>
         <li><a href="login.php">Login</a><li>
-        <?php } ?>
+        <?php   } 
+               ?>
       </ul>
 </nav>
           <nav class="nav">
             <ul class="nav-list">
               <li class="nav-item">
                 <a class="fa fa-envelope fa-3x" href="mailto:"></a>
-              </li>
-              <li class="nav-item">
-                <a class="fa fa-rss-square fa-3x" href="/feed.xml"></a>
               </li>
               <li class="nav-item">
                 <a class="fa fa-github fa-3x" href="https://github.com/"></a>

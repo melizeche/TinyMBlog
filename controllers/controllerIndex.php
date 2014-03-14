@@ -1,6 +1,13 @@
 <?php
 	require("models/modelIndex.php");
+	//require("config.php");
+class Index{
 	
+	function getInstance() {
+		static $Index ;
+		if (!$Index) $Index = new Index; 
+		return $Index;
+	}
 	
 	function listarPosts(){
 		$cursor = mIndex::getInstance()->getPosts();
@@ -10,28 +17,26 @@
 	
 	function linkPost($id){
 		$cursor = mIndex::getInstance()->getSinglePost($id);
+		
+
 		return $cursor;
 		
 	}
 	
-	function getTitle(){
-		$cursor = mIndex::getInstance()->getInfo();
+	function  getTitle(){
+		$info = mIndex::getInstance()->getInfo();
+		return  $info['titulo'];
 		
-		foreach ($cursor as $obj) {
-					return $obj['titulo'];
-		}
 	}
 	function getDescription(){
-		$cursor = mIndex::getInstance()->getInfo();
+		$info = mIndex::getInstance()->getInfo();
+		return  $info['description'];
 		
-		foreach ($cursor as $obj) {
-					return $obj['description'];
-		}
 	}
 	function getUrl(){
-		$cursor = mIndex::getInstance()->getInfo();
-		foreach ($cursor as $obj) {
-					echo $obj['url'];
-		}
+		$info = mIndex::getInstance()->getInfo();
+		return  $info['titulo'];
+		
 	}
+}
 ?>

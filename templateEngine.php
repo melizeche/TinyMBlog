@@ -23,7 +23,9 @@ class Template
     public function __toString()
 	{
 	    extract($this->variables);
-	    chdir(dirname($this->template));
+        if(file_exists(dirname($this->template))){
+	       chdir(dirname($this->template));
+        }
 	    ob_start();
 	 
 	    include basename($this->template);

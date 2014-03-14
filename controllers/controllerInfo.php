@@ -1,23 +1,27 @@
 <?php
 	require("models/modelInfo.php");
-	
+
+class Info {
+	function getInstance() {
+		static $Info ;
+		if (!$Info) $Info = new Info; 
+		return $Info;
+	}
+
 	function getTitulo(){
-		$cursor = mInfo::getInstance()->getInfo();
-		$titulo = $cursor->getNext();
-		return $titulo['titulo'];
+		$info = mInfo::getInstance()->getInfo();
+		return $info['titulo'];
 		
 	}
 	
 	function getBlogUrl(){
-		$cursor = mInfo::getInstance()->getInfo();
-		$titulo = $cursor->getNext();
-		return $titulo['url'];
+		$info = mInfo::getInstance()->getInfo();
+		return $info['url'];
 		
 	}
 	function getBlogDescription(){
-		$cursor = mInfo::getInstance()->getInfo();
-		$titulo = $cursor->getNext();
-		return $titulo['description'];
+		$info = mInfo::getInstance()->getInfo();
+		return $info['description'];
 		
 	}
 	function setInfo($titulo,$url,$description){
@@ -25,4 +29,5 @@
 		 mInfo::getInstance()->modInfo($titulo,$url,$description);
 		
 	}
+}
 ?>

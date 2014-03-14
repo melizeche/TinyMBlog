@@ -1,8 +1,8 @@
 <?php
 return array (
-  'host' => 'ds033469.mongolab.com',
-  'port' => '33469',
-  'database' => 'tiny',
-  'user' => 'admin',
-  'password' => 'admin',
+  'host' => 'oceanic.mongohq.com',
+  'port' => '10054',
+  'database' => 'tinyblog',
+  'user' => 'marce',
+  'password' => '12345',
 );

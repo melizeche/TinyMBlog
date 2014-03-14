@@ -3,7 +3,7 @@
 
 	/*** begin our session ***/
 
-	session_start();
+	//session_start();
 
 	/*** check if the users is already logged in ***/
 	if(isset( $_SESSION['user_id'] ))
@@ -64,15 +64,16 @@
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['user'])) { 
 		
 		echo $message;
+		echo "<script>location.assign('/')</script>";
 	}else{
 ?>
-<form action="login.php" method="post"> 
+<form class="pure-form" class="pure-form" action="login.php" method="post"> 
 	<fieldset> 
 		<p> <label for="user">Username</label> 
 			<input type="text" id="user" name="user" value="" maxlength="20" /> </p> 
-		<p> <label for="password">Password</label> <input type="text" id="password" name="password" value="" maxlength="20" /> </p>
+		<p> <label for="password">Password</label> <input type="password" id="password" name="password" value="" maxlength="20" /> </p>
 		<p><input type="hidden" name="_submit_check" value="1"/> </p>
-		<p> <input type="submit" value="Login" /> </p> 
+		<p> <input class="pure-button" type="submit" value="Login" /> </p> 
 	</fieldset> 
 </form> 
 

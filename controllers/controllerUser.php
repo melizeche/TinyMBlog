@@ -7,7 +7,6 @@
 			$collec = mIndex::connect("users");
 			$query =  array('user' => $user, 'password' => $password);
 			$cursor = $collec->find($query);
-			$mon->close();
 			return $cursor;
 	}
 	function checkSession($id){ //Recuperamos 1 Post
@@ -15,7 +14,6 @@
 			$collec = mIndex::connect("users");
 			$query =  array('_id' => $id);
 			$cursor = $collec->find($query);
-			$mon->close();
 			return $cursor;
 	}
 
