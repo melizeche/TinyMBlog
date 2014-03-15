@@ -182,3 +182,163 @@ a:hover .post-title {
         padding: 2em 1em 0;
     }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: inherit
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #999999
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    margin-top: 21px;
+    margin-bottom: 10.5px
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h1 .small,
+.h1 .small,
+h2 .small,
+.h2 .small,
+h3 .small,
+.h3 .small {
+    font-size: 65%
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin-top: 10.5px;
+    margin-bottom: 10.5px
+}
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small,
+h4 .small,
+.h4 .small,
+h5 .small,
+.h5 .small,
+h6 .small,
+.h6 .small {
+    font-size: 75%
+}
+h1,
+.h1 {
+    font-size: 39px
+}
+h2,
+.h2 {
+    font-size: 32px
+}
+h3,
+.h3 {
+    font-size: 26px
+}
+h4,
+.h4 {
+    font-size: 19px
+}
+h5,
+.h5 {
+    font-size: 15px
+}
+h6,
+.h6 {
+    font-size: 13px
+}
+ .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 140%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 5%;
+        left: 32,5%;
+        width: 35%;
+        height: 575px;
+        padding: 16px;
+        padding-left: 30px;
+        border: 10px solid rgb(116, 17, 50);
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+    }
+    table tbody>tr:nth-child(odd)>td, table tbody>tr:nth-child(odd)>th {
+    background-color: #f7f7f3;
+    }
+    table th, table td {
+
+    padding: 8px;
+    padding-left: 20px;
+    line-height: 15px;
+    text-align: left;
+    vertical-align: middle;
+    width: 65%;
+    border-top: 1px solid #edece4;
+    }
+    user agent stylesheet td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    }
+

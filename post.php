@@ -2,6 +2,7 @@
 require_once("controllers/controllerIndex.php");
 require_once("controllers/controllerUser.php");
 require_once("controllers/configManager.php");
+require_once 'vendors/Michelf/MarkdownExtra.inc.php';
 require 'templateEngine.php';
 
 $config =  new ConfigManager();

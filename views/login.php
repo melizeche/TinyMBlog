@@ -41,7 +41,7 @@
 	    $password = md5($password);
 		try
     	{
-		    $log = checkUser($user, $password)->getNext();
+		    $log = UserInfo::checkUser($user, $password)->getNext();
 		   # $login=$log->getNext();
 		    if($log == false)
 	        {

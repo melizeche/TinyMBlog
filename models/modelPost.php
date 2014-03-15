@@ -14,8 +14,17 @@
 		}
 		
 		function deletePost($id){
-			$ii = new MongoID( $id );
 			$collec = mIndex::getInstance()->connect("posts");
-			$collec->remove(array('_id' => $ii));
+			try{
+				$ii = new MongoID( $id );
+				$collec->remove(array('_id' => $ii));	
+			}catch(Exception $e){
+				echo "<p>Post not found :S</p>";
+				exit();
+
+			}
+			
 		}
 	}
+
+

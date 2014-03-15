@@ -9,9 +9,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $this->title; ?></title>
+   <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="css/pure-min.css">
   <link rel="stylesheet" href="css/FontAwesome/font-awesome.min.css">
   <link rel="stylesheet" href="css/blog.css">
+  <script src="js/jquery-2.1.0.min.js"></script>
+
 </head>
   <body>
     <div class="pure-g-r" id="layout">
@@ -29,7 +35,7 @@
         
         <?php session_start(); 
               if(isset($_SESSION['user_id'])){
-                if(isAuth($_SESSION['user_id'])) { 
+                if(UserInfo::isAuth($_SESSION['user_id'])) { 
         ?>
                 <li><a href="#">Posts</a>
                   <ul>
@@ -83,5 +89,6 @@
           }
       }
     </script>
+    
   </body>
 </html>

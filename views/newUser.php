@@ -13,10 +13,10 @@
 			User::getInstance()->newUser($user,$password,$email,$name);
 			echo "Se agrego el usuario!!";
 		}catch(Exception $e){
-			echo "Ya existe el usuario " . $user;
+			echo "Ya existe el usuario " . $else;
 		}
 		
-	} else { ?>
+	} user { ?>
 		
 		<form class="pure-form"  method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 			<p class="form">Nombre:</p>

@@ -1,7 +1,13 @@
 <?php
 	require("models/modelUser.php");
 	
-	
+class UserInfo{
+	function getInstance() {
+		static $Info ;
+		if (!$Info) $Info = new Info; 
+		return $Info;
+	}
+
 	function checkUser($user,$password){ //Recuperamos 1 Post
 			global $mon;
 			$collec = mIndex::connect("users");
@@ -31,7 +37,7 @@
 			return false;
 		}
 
- 		$ses = checkSession($_SESSION['user_id'])->getNext();
+ 		$ses = UserInfo::checkSession($_SESSION['user_id'])->getNext();
         $user = $ses['user'];
         if(empty($user)) {
             return false;
@@ -39,6 +45,6 @@
         
         return true;
 	}
-	
+}		
 	
 ?>

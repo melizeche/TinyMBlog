@@ -101,10 +101,10 @@
                       
                       $db = $m->selectDB($cfg['database']);
                       $col = $db->users;
-                      $a = array('_id' => '0','user' => $user, 'password' =>md5($password), 'email'=>'', 'name'=>'Admin');
+                      $a = array('_id' => '0','user' => $user, 'password' =>md5($password), 'email'=>'', 'name'=>'Admin', 'role'=>'0');
                       $col->insert($a);
                       $col = $db->posts;
-                      $a = array('_id' => '1', 'titulo' => "Hello World!", 'text'=>"Your first post!" ,'autor' => "0", 'fecha'=>time());
+                      $a = array('titulo' => "Hello World!", 'text'=>"Your first post!" ,'autor' => "0", 'fecha'=>time());
                       $col->insert($a);
                       $col = $db->info;
                       $a = array('titulo' => "Just A TinyMBlog", 'description' => "A ultra light blogging CMS", 'url'=>'#');
