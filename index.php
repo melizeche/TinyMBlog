@@ -3,6 +3,7 @@ require_once("controllers/controllerIndex.php");
 require_once("controllers/controllerUser.php");
 require_once("controllers/configManager.php");
 require 'templateEngine.php';
+require 'views.php';
 
 ## configuration ##
 
@@ -26,6 +27,8 @@ else switch(array_shift($elements))             // Pop off first item and switch
     	break;
     case 'post':
     	echo "post";
+        $content = View::post();
+
     	break;
         
     default:
@@ -41,9 +44,9 @@ $cfg='';
 //echo var_dump(ConfigManager::get('database'));
 
 $view = new Template("views/pure.php");
-$content = new Template("views/posts.php");
+//$content = new Template("views/posts.php");
 
-$content->config = $cfg;
+//$content->config = $cfg;
 
 $view->title =  Index::getTitle();
 $view->description = Index::getDescription();
