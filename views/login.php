@@ -4,12 +4,14 @@
 	/*** begin our session ***/
 
 	//session_start();
-
+//print_r($_SESSION);
 	/*** check if the users is already logged in ***/
-	if(isset( $_SESSION['user_id'] ))
+	if(isset($_SESSION['user_id']) && UserInfo::isAuth($_SESSION['user_id']))
 	{
-	    $message = 'User is already logged in';
+	    echo 'User is already logged in';
+	    exit();
 	}
+
 	/*** check that both the username, password have been submitted ***/
 	if(!isset( $_POST['user'], $_POST['password']))
 	{
@@ -64,10 +66,12 @@
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['user'])) { 
 		
 		echo $message;
-		echo "<script>location.assign('/')</script>";
+		if($log){
+			echo "<script>location.assign('/')</script>";
+		}
 	}else{
 ?>
-<form class="pure-form" class="pure-form" action="login.php" method="post"> 
+<form class="pure-form" class="pure-form" action="login" method="post"> 
 	<fieldset> 
 		<p> <label for="user">Username</label> 
 			<input type="text" id="user" name="user" value="" maxlength="20" /> </p> 

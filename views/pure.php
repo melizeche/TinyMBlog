@@ -11,12 +11,12 @@
   <title><?php echo $this->title; ?></title>
    <!-- Bootstrap -->
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/pure-min.css">
-  <link rel="stylesheet" href="css/FontAwesome/font-awesome.min.css">
-  <link rel="stylesheet" href="css/blog.css">
-  <script src="js/jquery-2.1.0.min.js"></script>
+  <link rel="stylesheet" href="../css/pure-min.css">
+  <link rel="stylesheet" href="../css/FontAwesome/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <script src="../js/jquery-2.1.0.min.js"></script>
 
 </head>
   <body>
@@ -29,13 +29,13 @@
           </hgroup>
 <nav id="horizontal">
       <ul>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="../index.php">Home</a></li>
         
         
         
         <?php session_start(); 
-              if(isset($_SESSION['user_id'])){
-                if(UserInfo::isAuth($_SESSION['user_id'])) { 
+               if(isset($_SESSION['user_id']) && UserInfo::isAuth($_SESSION['user_id'])) { 
+               
         ?>
                 <li><a href="#">Posts</a>
                   <ul>
@@ -46,8 +46,8 @@
                 </li>
                 <li><a href="logout.php">Logout</a><li>
         <?php 
-                }}else{  ?>
-        <li><a href="login.php">Login</a><li>
+                  }else{  ?>
+        <li><a href="login">Login</a><li>
         <?php   } 
                ?>
       </ul>

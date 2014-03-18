@@ -103,8 +103,24 @@
                       $col = $db->users;
                       $a = array('_id' => '0','user' => $user, 'password' =>md5($password), 'email'=>'', 'name'=>'Admin', 'role'=>'0');
                       $col->insert($a);
+                      #####
+                      // $col = $db->counters;
+                      // $a = array('_id' => 'postid', 'seq' => 0);
+                      // $col->insert($a);
+                      // #####
+                      // $fun = "function getNextId(name) { var ret = db.counters.findAndModify({query: { _id: name }, update: { $inc: { seq: 1 } }, new: true }); return ret.seq;}";
+                      // $col = $db->func;
+                      // $col->save(array(
+                      //           '_id'   => 'getNextId',
+                      //           'value' => new MongoCode($fun),
+                      //           ));
+                      //'_id' => 'getNextId("postid")'
+                      #####
                       $col = $db->posts;
-                      $a = array('titulo' => "Hello World!", 'text'=>"Your first post!" ,'autor' => "0", 'fecha'=>time());
+                      $a = array('titulo' => "Hello World!", 
+                                  'text'=>"## Hello World!\r\n###This is your first post!\r\n\r\nYou can use Markdown in your posts so you can do:\r\n*Italic*, **bold**, `monospace`. \r\n\r\n##Lists: \r\n\r\n* Like this one\r\n* that one\r\n* the other one\r\n\r\nAnd many other things like quoting. \r\n\r\n> You can find more info about Markdown [here](http://daringfireball.net/projects/markdown/syntax)" ,
+                                  'autor' => "0", 
+                                  'fecha'=>time());
                       $col->insert($a);
                       $col = $db->info;
                       $a = array('titulo' => "Just A TinyMBlog", 'description' => "A ultra light blogging CMS", 'url'=>'#');

@@ -28,7 +28,6 @@ class UserInfo{
 			$collec = mIndex::connect("users");
 			$query =  array('_id' => $id);
 			$cursor = $collec->findOne($query);
-			
 			return $cursor;	
 	}
 

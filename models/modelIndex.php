@@ -45,7 +45,7 @@
 				$cursor = $collec->findOne($query);
 			}catch(Exception $e){
                 echo "<p>Post not found :(";
-                exit();
+                return false;
             }
 			
 			return $cursor;
