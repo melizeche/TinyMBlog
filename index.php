@@ -3,6 +3,7 @@ require_once("controllers/controllerIndex.php");
 require_once("controllers/controllerUser.php");
 require_once("controllers/controllerInfo.php");
 require_once("controllers/configManager.php");
+require_once("models/modelPost.php");
 require 'templateEngine.php';
 require 'views.php';
 
@@ -16,17 +17,24 @@ $config::loadConfig();
 $path = ltrim($_SERVER['REQUEST_URI'], '/');    // Trim leading slash(es)
 $elements = explode('/', $path);                // Split path on slashes
 //print_r($elements);
+
 if(count($elements) == 0)                       // No path elements means home
     echo "realindex";
 else switch(array_shift($elements))             // Pop off first item and switch
 {
     case '':
         echo "index"; // passes rest of parameters to internal function
-        $content = View::index();
+        $content = View::index($elements);
+        break;
+    case 'delPost':
+        $content = View::delPost($elements);
+        break;
+    case 'editBlog':
+        $content = View::editBlog($elements);
         break;
     case 'index.php':
         echo "index.php"; // passes rest of parameters to internal function
-        $content = View::index();
+        $content = View::index($elements);
         break;
     case 'login':
     	echo "login";
@@ -34,6 +42,12 @@ else switch(array_shift($elements))             // Pop off first item and switch
     	break;
     case 'logout':
         $content = View::logout($elements);
+        break;
+    case 'newPost':
+        $content = View::newPost($elements);
+        break;
+    case 'newUser':
+        $content = View::newUser($elements);
         break;
     case 'post':
         $content = View::post($elements);

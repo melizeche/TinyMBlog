@@ -8,6 +8,17 @@ class View{
 		return $View;
 	}
 
+	function delPost($request){
+		$content = new Template("views/delPost.php");
+		print_r($request);
+		return $content;
+	}
+	function editBlog($request){
+		$content = new Template("views/editBlog.php");
+		print_r($request);
+		return $content;
+	}
+
 	function index($request){
 		return $content = new Template("views/posts.php");
 	}
@@ -23,6 +34,19 @@ class View{
 		if(session_destroy()){
 			return $content = "Log out <br> <script>location.assign('/')</script>";
 		}
+	}
+
+	function newPost($request){
+		$content = new Template("views/newPost.php");
+		print_r($request);
+		return $content;
+	}
+	function newUser($request){
+		$content = new Template("views/newUser.php");
+		$content->auth = new Template("views/auth.php");
+
+		print_r($request);
+		return $content;
 	}
 
 	function post($request){

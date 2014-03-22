@@ -29,7 +29,7 @@
           </hgroup>
 <nav id="horizontal">
       <ul>
-        <li><a href="../index.php">Home</a></li>
+        <li><a href="/">Home</a></li>
         
         
         
@@ -39,12 +39,13 @@
         ?>
                 <li><a href="#">Posts</a>
                   <ul>
-                    <li><a href="newPost.php">New post!</a></li>
-                    <li><a href="delPost.php">Delete post!</a></li>
+                    <li><a href="newPost">New post!</a></li>
+                    <li><a href="delPost">Delete post!</a></li>
                     <li><a href="editBlog.php">Edit Blog info!</a></li>
+                    <li><a href="newUser">Add User!</a></li>
                   </ul>
                 </li>
-                <li><a href="logout.php">Logout</a><li>
+                <li><a href="logout">Logout</a><li>
         <?php 
                   }else{  ?>
         <li><a href="login">Login</a><li>

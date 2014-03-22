@@ -16,9 +16,9 @@
 			echo "Ya existe el usuario " . $else;
 		}
 		
-	} user { ?>
+	} else { ?>
 		
-		<form class="pure-form"  method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+		<form class="pure-form"  method="post" action="newUser">
 			<p class="form">Nombre:</p>
 			<p><input  type="text" name="name" value="<?php if (isset($name)) { echo $name; } ?>" /></p>
 			<p class="form">Username:</p>

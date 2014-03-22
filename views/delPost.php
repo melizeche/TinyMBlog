@@ -5,7 +5,7 @@
 		echo "Post deleted!";
 
 	} else { ?>
-		<form class="pure-form" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" >
+		<form class="pure-form" method="post" action="delPost" >
 		
 			<p><select name="SelPost" size="1">
 				<?php

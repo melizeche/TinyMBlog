@@ -5,7 +5,7 @@
 
 
 
-	if(!isAuth($_SESSION['user_id'])){
+	if(!UserInfo::isAuth($_SESSION['user_id'])){
 		echo "Access Error";
 		exit();
 	}

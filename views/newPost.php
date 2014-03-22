@@ -38,7 +38,7 @@
 				
 				
 
-		<form class="pure-form" class="pure-form" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+		<form class="pure-form" class="pure-form" method="post" action="newPost">
 			<p class="form">Post Title:</p>
 			<p><input style="width:100%;" type="text" name="titulo" value="<?php if (isset($titulo)) { echo $titulo; } ?>" /></p>
 			<p class="form">Text:</p>

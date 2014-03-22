@@ -15,7 +15,7 @@
 	}
 	
 	?>
-	<form class="pure-form" class="pure-form" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+	<form class="pure-form" class="pure-form" method="post" action="editBlog">
 			<p class="form">Titulo:</p>
 			<p><input type="text" name="titulo" value="<?php echo Info::getTitulo(); ?>" /></p>
 			<p class="form">Url:</p>
