@@ -1,8 +1,6 @@
 <?php
+	echo $this->auth;
 	
-//echo "1";
-//MongoLog::setModule( MongoLog::ALL );
-//MongoLog::setLevel( MongoLog::ALL );
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['titulo'])) { 
 //		echo "2";
 		//newp::getInstance()->newPost($_POST['titulo'],$_POST['texto'],'admin');

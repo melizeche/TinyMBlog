@@ -32,6 +32,9 @@ else switch(array_shift($elements))             // Pop off first item and switch
     case 'editBlog':
         $content = View::editBlog($elements);
         break;
+    case 'editPost':
+        $content = View::editPost($elements);
+        break;
     case 'index.php':
         echo "index.php"; // passes rest of parameters to internal function
         $content = View::index($elements);

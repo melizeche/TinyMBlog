@@ -6,7 +6,7 @@
 
 
 	if(!UserInfo::isAuth($_SESSION['user_id'])){
-		echo "Access Error";
+		echo "<p>Access Error, please <a href='../login'>log in</a></p>";
 		exit();
 	}
 

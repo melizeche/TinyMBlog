@@ -1,5 +1,5 @@
 <?php
-	
+	echo $this->auth;
 	
 	
 	if (array_key_exists('_submit_check',$_POST) && !empty($_POST['titulo'])) { 

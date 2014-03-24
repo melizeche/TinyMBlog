@@ -34,7 +34,11 @@
   </script>
     <textarea style="display:none;" name="texto" id="texto"><?php echo $this->post["text"]; ?></textarea>
     <div id="epiceditor"></div>
-    <?php }else{ ?>
+    <?php 
+      if(isset($_SESSION['user_id']) && UserInfo::isAuth($_SESSION['user_id'])) { 
+        echo "<p><a href='../editPost/". $this->id . "'>Edit Post</a></p>";
+      }
+      }else{ ?>
     <h1>ERROR 404: Post not found :(</h1>
     </p>
     <?php } ?>

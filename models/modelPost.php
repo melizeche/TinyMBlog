@@ -25,6 +25,13 @@
 			}
 			
 		}
+		function update($id,$titu,$text){
+			$collec = mIndex::getInstance()->connect("posts");
+			$a = array('_id' => new MongoID ($id));
+			$newdata = array('$set' => array("titulo" => $titu , "text" => $text));
+			$collec->update($a,$newdata);
+		}
+
 	}
 
 

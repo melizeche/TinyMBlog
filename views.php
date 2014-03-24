@@ -1,6 +1,7 @@
 <?php
 
 class View{
+
 	
 	function getInstance() {
 		static $View ;
@@ -10,17 +11,33 @@ class View{
 
 	function delPost($request){
 		$content = new Template("views/delPost.php");
+		$content->auth = new Template("views/auth.php");
 		print_r($request);
 		return $content;
 	}
 	function editBlog($request){
 		$content = new Template("views/editBlog.php");
+		$content->auth = new Template("views/auth.php");
 		print_r($request);
+		return $content;
+	}
+	function editPost($request){
+		$content = new Template("views/editPost.php");
+		$content->auth = new Template("views/auth.php");
+		print_r($request);
+		if (array_key_exists('0',$request)){
+			$content->id = $request[0];
+			$content->post= Index::linkPost($content->id);
+	    	//print_r($content);
+		}else{
+			$content->post = false;
+		}
 		return $content;
 	}
 
 	function index($request){
 		return $content = new Template("views/posts.php");
+		
 	}
 
 	function login($request){
@@ -38,6 +55,7 @@ class View{
 
 	function newPost($request){
 		$content = new Template("views/newPost.php");
+		$content->auth = new Template("views/auth.php");
 		print_r($request);
 		return $content;
 	}
