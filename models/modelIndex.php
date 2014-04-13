@@ -52,11 +52,12 @@
 		}
 		
 		function getInfo(){// Recuperamos la informacion del blog
-			global $mon;
+			
 			$collec=mIndex::getInstance()->connect("info");
 			$a = array('_id' => '1');
 			$cursor = $collec->findOne($a);
 			return $cursor;
 		}
+		
 	}
 ?>

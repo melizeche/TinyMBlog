@@ -37,7 +37,7 @@ class View{
 
 	function index($request){
 		return $content = new Template("views/posts.php");
-		
+
 	}
 
 	function login($request){
@@ -48,6 +48,7 @@ class View{
 	function logout($request){
 		session_start();
 		$_SESSION = array();
+		session_unset(); 
 		if(session_destroy()){
 			return $content = "Log out <br> <script>location.assign('/')</script>";
 		}
@@ -73,7 +74,6 @@ class View{
 			$content->id = $request[0];
 			$content->post= Index::linkPost($content->id);
     		$content->name =  UserInfo::getUser($content->post["autor"])['name'];
-	    		//print_r($content);
 		}else{
 			$content->post = false;
 		}

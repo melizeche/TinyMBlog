@@ -30,43 +30,31 @@
 <nav id="horizontal">
       <ul>
         <li><a href="/">Home</a></li>
-        
-        
-        
         <?php session_start(); 
                if(isset($_SESSION['user_id']) && UserInfo::isAuth($_SESSION['user_id'])) { 
                
         ?>
-                <li><a href="#">Posts</a>
-                  <ul>
-                    <li><a href="../newPost">New post!</a></li>
-                    <li><a href="../delPost">Delete post!</a></li>
-                    <li><a href="../editBlog.php">Edit Blog info!</a></li>
-                    <li><a href="../newUser">Add User!</a></li>
-                  </ul>
-                </li>
-                <li><a href="../logout">Logout</a><li>
+        
+          <ul>
+            <li><a href="../newPost">New post</a></li>
+            <li><a href="../delPost">Delete post</a></li>
+            <li><a href="../editBlog">Edit Blog info</a></li>
+            <li><a href="../newUser">Add User</a></li>
+          </ul>
+        </li>
+        <ul>
+        <li><a href="../logout">Logout</a><li>
         <?php 
                   }else{  ?>
         <li><a href="../login">Login</a><li>
         <?php   } 
                ?>
+        </ul>
       </ul>
 </nav>
           <nav class="nav">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a class="fa fa-envelope fa-3x" href="mailto:"></a>
-              </li>
-              <li class="nav-item">
-                <a class="fa fa-github fa-3x" href="https://github.com/"></a>
-              </li>
-              <li class="nav-item">
-                <a class="fa fa-twitter fa-3x"  href="https://twitter.com/"></a>
-              </li>
-              <li class="nav-item">
-                <a class="fa fa-linkedin fa-3x" href="http://www.linkedin.com/in/"></a>
-              </li>
+              <?php echo $this->links; ?>
             </ul>
           </nav>
           

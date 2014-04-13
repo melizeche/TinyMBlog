@@ -6,7 +6,15 @@ class ConfigManager {
 
     public function loadConfig() {
     	
-    	$cfg = require 'config.php';
+    	 $cfg = include 'config.php';
+       if(!$cfg){
+        $view = new Template("views/pure.php"); 
+        $view->content = "<h1>config.php not found, please run <a href='setup.php'>Setup</a></h1>";
+        echo '<link rel="stylesheet" href="../css/pure-min.css"><h1>config.php not found, please run <a href="setup.php">Setup</a></h1>';
+        exit;
+       }
+     
+      if($cfg){
     	 if($cfg['user']){
             $connstr = "mongodb://${cfg['user']}:${cfg['password']}@${cfg['host']}:${cfg['port']}/${cfg['database']}";
         }else{
@@ -18,6 +26,9 @@ class ConfigManager {
         mIndex::connect('users')->ensureIndex(['user' => 1], ['unique' => true, 'background' => true]);
 
     	return $cfg;
+    }else{
+      return false;
+    }
 	}
  
    public static function set($key, $value = NULL) 

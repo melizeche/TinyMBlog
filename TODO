@@ -1,12 +1,15 @@
 TODO
 
 # Sanitize all inputs
+# check logins in new installs
 # Users Roles
-# Setup script for new installs
-# Setup file for the database connection
+# Config the path of the install
+# ~~Setup script for new installs~~
+# ~~Setup file for the database connection~~
 # Organize files
 # move some models funtions to controllers
-# all the pages to the new template syste
+# ~~all the pages to the new template system~~
 # clear all views from functions
-# markdown support
-# epiceditor
+# ~~markdown support~~
+# ~~epiceditor~~
+# Support for subdirectory installation
